@@ -1,0 +1,97 @@
+body {
+    background-color: #ffdada;
+    font-family: "Times New Roman", serif;
+}
+
+
+
+.login-box {
+    width: 365px;
+    height: 185px;
+
+    margin-left: 89px;
+    margin-top: 70px;
+
+    border: 1px solid #999;
+}
+
+
+
+legend {
+    color: red;
+    font-size: 24px;
+    padding: 0 5px;
+}
+
+
+
+.form-row {
+    margin-bottom: 3px;
+}
+
+
+
+.form-row label {
+    font-size: 19px;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+    width: 202px;
+    height: 24px;
+
+    font-size: 16px;
+    padding-left: 5px;
+
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+select {
+    width: 135px;
+    height: 25px;
+
+    font-size: 16px;
+
+    border: 1px solid #999;
+}
+
+
+
+optgroup {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+.remember {
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+
+
+.remember label {
+    font-size: 19px;
+}
+
+
+button {
+    margin-top: 23px;
+    margin-left: 10px;
+
+    width: 82px;
+    height: 26px;
+
+    font-size: 15px;
+
+    border: 1px solid #aaa;
+    border-radius: 3px;
+
+    background-color: #eeeeee;
+}

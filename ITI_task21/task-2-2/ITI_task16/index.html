@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vacation Rentals</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="./bootstrap-5.3.8-dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #444;
+        }
+
+    
+
+        .navbar {
+            min-height: 38px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .navbar-brand {
+            font-size: 13px;
+            color: #666 ;
+            margin-right: 20px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 11px;
+            color: #555 ;
+            padding: 11px 10px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #eee;
+        }
+
+        .search-box {
+            width: 110px;
+            height: 27px;
+            font-size: 11px;
+        }
+
+        .search-btn {
+            height: 27px;
+            font-size: 11px;
+            padding: 2px 10px;
+        }
+
+        
+
+   .hero {
+    width: 100%;
+    height: 250px;
+
+    background-image: url("./51+QVYDoGYL._AC_UF1000,1000_QL80_.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+        .hero-content {
+            padding-top: 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 31px;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px #555;
+            margin-bottom: 2px;
+        }
+
+        .hero p {
+            color: white;
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .hero .btn {
+            font-size: 10px;
+            padding: 6px 10px;
+        }
+
+        
+
+        .rentals {
+            padding-top: 15px;
+            padding-bottom: 17px;
+        }
+
+        .rental-card {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .rental-image {
+            width: 155px;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 8px;
+        }
+
+        .rental-card h4 {
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 7px;
+            color: #444;
+        }
+
+        .rental-card p {
+            font-size: 9px;
+            line-height: 1.45;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .rental-card .btn {
+            font-size: 9px;
+            padding: 3px 7px;
+        }
+
+        
+
+        footer {
+            border-top: 1px dotted #ccc;
+            min-height: 48px;
+            padding-top: 9px;
+            font-size: 9px;
+            color: #777;
+        }
+
+        .footer-brand {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .footer-link {
+            font-size: 9px;
+            margin-right: 15px;
+            text-decoration: none;
+            color: #6699bb;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .navbar-nav {
+                margin-top: 5px;
+            }
+
+            .hero {
+                height: 180px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .rental-card {
+                margin-bottom: 30px;
+            }
+
+            .rental-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            footer {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                Vacation Rentals
+            </a>
+            <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#mainNavbar">
+
+    <span class="navbar-toggler-icon"></span>
+
+</button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            🏠 Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            ★ Top Destinations
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            👤 About Us ▾
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            🎟 Book Tickets
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            ⚙ Reservation ▾
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Search -->
+
+                <form class="d-flex">
+
+                    <input
+                        class="form-control search-box me-1"
+                        type="search"
+                        placeholder="Search">
+
+                    <button
+                        class="btn btn-outline-secondary search-btn"
+                        type="submit">
+
+                        Submit
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <h1>
+                Best Vacation Rentals
+            </h1>
+
+            <p>
+                Sed placerat ligula quis quam.
+            </p>
+
+            <a href="#" class="btn btn-primary">
+                Start Now!
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    
+
+    <section class="rentals">
+
+        <div class="container">
+
+            <div class="row g-3">
+
+
+                <!-- TYPE 1 -->
+
+                <div class="col-md-4">
+
+                    <div class="rental-card">
+
+                        <img
+                            src="./imge1.jpeg"
+                            alt="Type 1"
+                            class="rental-image">
+
+                        <h4>
+                            Type 1
+                        </h4>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Aenean hendrerit quis augue
+                            sit amet mollis. Mauris id turpis diam.
+                            Ut pellentesque justo dolor, nec eleifend
+                            mauris euismod vitae. Morbi diam est,
+                            ornare non felis sit amet, elementum ultrices
+                            ante. Mauris id condimentum mauris.
+                            Nunc eleifend et enim eu sagittis.
+                            In congue sapien nec vulputate pulvinar,
+                            tellus lobortis nibh at, molestie tellus lacus
+                            ac metus.
+                        </p>
+
+                        <a href="#" class="btn btn-success">
+                            Book Now @ $599
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TYPE 2 -->
+
+                <div class="col-md-4">
+
+                    <div class="rental-card">
+
+                        <img
+                            src="./images.jpeg"
+                            alt="Type 2"
+                            class="rental-image">
+
+                        <h4>
+                            Type 2
+                        </h4>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Aenean hendrerit quis augue
+                            sit amet mollis. Mauris id turpis diam.
+                            Ut pellentesque justo dolor, nec eleifend
+                            mauris euismod vitae. Morbi diam est,
+                            ornare non felis sit amet, elementum ultrices
+                            ante. Mauris id condimentum mauris.
+                            Nunc euismod feugiat enim eu sagittis.
+                            In congue sapien nec vulputate pulvinar,
+                            tellus lobortis nibh at, molestie tellus lacus
+                            ac metus.
+                        </p>
+
+                        <a href="#" class="btn btn-danger">
+                            Book Now @ $599
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TYPE 3 -->
+
+                <div class="col-md-4">
+
+                    <div class="rental-card">
+
+                        <img
+                            src="./imege3.jpg"
+                            alt="Type 3"
+                            class="rental-image">
+
+                        <h4>
+                            Type 3
+                        </h4>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Aenean hendrerit quis augue
+                            sit amet mollis. Mauris id turpis diam.
+                            Ut pellentesque justo dolor, nec eleifend
+                            mauris euismod vitae. Morbi diam est,
+                            ornare non felis sit amet, elementum ultrices
+                            ante. Mauris id condimentum mauris.
+                            Nunc euismod feugiat enim eu sagittis.
+                            In congue sapien nec vulputate pulvinar,
+                            tellus lobortis nibh at, molestie tellus lacus
+                            ac metus.
+                        </p>
+
+                        <a href="#" class="btn btn-info text-white">
+                            Book Now @ $599
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+               
+
+                <div class="col-md-4">
+                    © 2013
+                </div>
+
+
+                
+
+                <div class="col-md-4 text-center">
+
+                    <a href="#" class="footer-link">
+                        About Us
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        Support 24/7
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        Privacy Policy
+                    </a>
+
+                </div>
+
+
+                <!-- Brand -->
+
+                <div class="col-md-4 text-md-end text-center">
+
+                    <span class="footer-brand">
+                        Vacation Rentals
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+    <script
+        src="./bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج التسجيل</title>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="./bootstrap-5.3.8-dist/css/bootstrap.rtl.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            border-radius: 12px;
+        }
+        .error-msg {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            
+            <div v-if="!isSubmitted" class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h4 class="mb-0">استمارة التسجيل</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form @submit.prevent="handleSubmit" novalidate>
+                        
+                        
+                        <div class="mb-3">
+                            <label class="form-label">الاسم بالكامل</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                :class="{'is-invalid': errors.name}" 
+                                v-model="formData.name" 
+                                placeholder="أدخل اسمك"
+                            >
+                            <div v-if="errors.name" class="error-msg">برجاء ملء خانة الاسم</div>
+                        </div>
+
+                        <!-- رقم الهاتف / القومي -->
+                        <div class="mb-3">
+                            <label class="form-label">الرقم</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                :class="{'is-invalid': errors.phone}" 
+                                v-model="formData.phone" 
+                                placeholder="أدخل الرقم"
+                            >
+                            <div v-if="errors.phone" class="error-msg">برجاء ملء خانة الرقم</div>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <label class="form-label">السنة الدراسية</label>
+                            <select 
+                                class="form-select" 
+                                :class="{'is-invalid': errors.academicYear}" 
+                                v-model="formData.academicYear"
+                            >
+                                <option value="" disabled selected>اختر السنة الدراسية</option>
+                                <option value="السنة الأولى">السنة الأولى</option>
+                                <option value="السنة الثانية">السنة الثانية</option>
+                                <option value="السنة الثالثة">السنة الثالثة</option>
+                                <option value="السنة الرابعة">السنة الرابعة</option>
+                            </select>
+                            <div v-if="errors.academicYear" class="error-msg">برجاء اختيار السنة الدراسية</div>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <label class="form-label">التخصص</label>
+                            <select 
+                                class="form-select" 
+                                :class="{'is-invalid': errors.specialization}" 
+                                v-model="formData.specialization"
+                            >
+                                <option value="" disabled selected>اختر التخصص</option>
+                                <option value="علوم الحاسب">علوم الحاسب (CS)</option>
+                                <option value="نظم المعلومات">نظم المعلومات (IS)</option>
+                                <option value="الذكاء الاصطناعي">الذكاء الاصطناعي (AI)</option>
+                                <option value="تكنولوجيا المعلومات">تكنولوجيا المعلومات (IT)</option>
+                            </select>
+                            <div v-if="errors.specialization" class="error-msg">برجاء اختيار التخصص</div>
+                        </div>
+
+                        
+                        <button type="submit" class="btn btn-primary w-100 mt-3 py-2">تسجيل البيانات</button>
+
+                    </form>
+                </div>
+            </div>
+
+            
+            <div v-else class="card shadow-sm">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h4 class="mb-0">تم تسليم البيانات بنجاح!</h4>
+                </div>
+                <div class="card-body p-4">
+                    <h5 class="card-title text-center mb-4">ملخص البيانات المدخلة:</h5>
+                    
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>الاسم:</strong>
+                            <span>{{ formData.name }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>الرقم:</strong>
+                            <span>{{ formData.phone }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>السنة الدراسية:</strong>
+                            <span>{{ formData.academicYear }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>التخصص:</strong>
+                            <span>{{ formData.specialization }}</span>
+                        </li>
+                    </ul>
+
+                    <button @click="resetForm" class="btn btn-outline-secondary w-100">الرجوع للنموذج</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="./script.js"></script>
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        isSubmitted: false,
+        formData: {
+          name: '',
+          phone: '',
+          academicYear: '',
+          specialization: ''
+        },
+        errors: {
+          name: false,
+          phone: false,
+          academicYear: false,
+          specialization: false
+        }
+      };
+    }, 
+    methods: {
+      handleSubmit() {
+        this.errors.name = !this.formData.name.trim();
+        this.errors.phone = !this.formData.phone.trim();
+        this.errors.academicYear = !this.formData.academicYear;
+        this.errors.specialization = !this.formData.specialization;
+
+        if (!this.errors.name && !this.errors.phone && !this.errors.academicYear && !this.errors.specialization) {
+          this.isSubmitted = true;
+        }
+      },
+      resetForm() {
+        this.isSubmitted = false;
+        
+        this.formData = { name: '', phone: '', academicYear: '', specialization: '' };
+        this.errors = { name: false, phone: false, academicYear: false, specialization: false };
+      }
+    }
+  }); 
+
+  app.mount('#app');
+</script>
+
+</body>
+</html>

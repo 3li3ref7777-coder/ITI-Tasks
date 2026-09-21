@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Face</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            height: 1500px;
+            padding-top: 50px;
+        }
+
+        canvas {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+       
+        <canvas id="faceCanvas" width="300" height="300"></canvas>
+
+
+    </div>
+
+    <script>
+
+        const canvas = document.getElementById("faceCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const sadImage = new Image();
+        const smileyImage = new Image();
+
+        sadImage.src = "sad.png";
+        smileyImage.src = "smiley.png";
+
+        
+        sadImage.onload = function () {
+            ctx.drawImage(
+                sadImage,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+        };
+
+       
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 0) {
+
+                ctx.clearRect(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+
+                ctx.drawImage(
+                    smileyImage,
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

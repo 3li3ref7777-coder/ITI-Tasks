@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Face</title>
+
+    <style>
+        svg {
+            border: 2px solid black;
+        }
+
+        .part {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+     <section >
+    <h2>Simple Face Using SVG</h2>
+
+    <svg width="500" height="400">
+
+        <!-- Face -->
+        <circle cx="250" cy="200" r="150"
+                fill="lightyellow" stroke="black" stroke-width="3" />
+
+        <!-- Left Eye -->
+        <ellipse class="part"
+                 cx="195" cy="160"
+                 rx="25" ry="35"
+                 fill="white"
+                 stroke="black"
+                 onmouseover="showPart('Eye')"
+                 onmouseout="hidePart()" />
+
+        <!-- Right Eye -->
+        <ellipse class="part"
+                 cx="305" cy="160"
+                 rx="25" ry="35"
+                 fill="white"
+                 stroke="black"
+                 onmouseover="showPart('Eye')"
+                 onmouseout="hidePart()" />
+
+        <!-- Left Pupil -->
+        <circle class="part" cx="195" cy="160" r="10" fill="black" onmouseover="showPart('Eye')"
+                 onmouseout="hidePart()" />
+
+        <!-- Right Pupil -->
+        <circle class="part" cx="305" cy="160" r="10" fill="black" onmouseover="showPart('Eye')"
+                 onmouseout="hidePart()" />
+
+        <!-- Nose -->
+        <ellipse class="part"
+                 cx="250" cy="220"
+                 rx="20" ry="35"
+                 fill="orange"
+                 stroke="black"
+                 onmouseover="showPart('Nose')"
+                 onmouseout="hidePart()" />
+
+        <!-- Mouth -->
+        <ellipse class="part"
+                 cx="250" cy="285"
+                 rx="65" ry="25"
+                 fill="pink"
+                 stroke="black"
+                 onmouseover="showPart('Mouth')"
+                 onmouseout="hidePart()" />
+
+        <!-- Message -->
+        <text id="message"
+              x="170"
+              y="380"
+             
+              font-size="20">
+        </text>
+
+    </svg>
+    </section>
+
+    <br><br>
+    <section>
+
+        
+    </section>
+
+    <script>
+
+        function showPart(part) {
+            document.getElementById("message").textContent =
+                "You are over the " + part;
+        }
+
+        function hidePart() {
+            document.getElementById("message").textContent = "";
+        }
+
+    </script>
+
+</body>
+
+</html>
+

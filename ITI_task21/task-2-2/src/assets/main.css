@@ -1,0 +1,14 @@
+.book-image {
+  height: 320px;            /* تحديد ارتفاع مناسب لغلاف الكتاب */
+  object-fit: contain;      /* يضمن إظهار الصورة بالكامل دون قص */
+  background-color: #f8f9fa; /* خلفية خفيفة لملء الفراغات إذا كانت أبعاد الصورة مختلفة */
+  padding: 10px;
+}
+
+.book-card {
+  transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}

@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Times New Roman", serif;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+}
+
+
+
+.navbar {
+    width: 94%;
+    margin: 9px auto 10px;
+
+    background-color: #eeeeee;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 7px 0;
+}
+
+.navbar a {
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ad6852;
+}
+
+
+
+
+.container {
+    width: 92%;
+    margin: 0 auto;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+
+
+.box {
+    flex: 1;
+
+    border: 3px solid #222;
+
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+}
+
+
+
+
+.content {
+    flex: 1;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 27px;
+
+    margin-bottom: 18px;
+
+    color: #ad6852;
+}
+
+.content p {
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+.content strong {
+    color: #ad6852;
+}
+
+
+
+
+.box footer {
+    height: 35px;
+
+    background-color: #eeeeee;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 19px;
+}
+
+
+
+.page-footer {
+    margin-top: auto;
+
+    min-height: 55px;
+
+    background-color: #ad6852;
+
+    border-top: 7px solid #f4a62a;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-footer p {
+    color: white;
+
+    font-size: 18px;
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 12px;
+    }
+
+    .navbar a {
+        font-size: 23px;
+    }
+
+    .container {
+        flex-direction: column;
+
+        width: 92%;
+    }
+
+    .box {
+        min-height: 280px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+
+    .page-footer {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    
+    <link rel="stylesheet" href="style_1.css">
+</head>
+
+<body>
+
+    <form class="form-container">
+
+        
+        <div class="row">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required>
+        </div>
+
+        
+        <div class="row">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required>
+        </div>
+
+        
+        <div class="row">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+        </div>
+
+        
+        <div class="row gender-row">
+            <div class="label-box">
+                <b>Gender</b>
+            </div>
+
+            <div class="gender-options">
+                <label>
+                    <input type="radio" name="gender" value="male" required>
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="female" required>
+                    Female
+                </label>
+            </div>
+        </div>
+
+        
+        <div class="row birthday-row">
+            <label>Birthday:</label>
+
+            <select required>
+                <option>[Select a Month]</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+
+            <input type="text" class="day" placeholder="dd" required>
+            <input type="text" class="year" placeholder="yyyy" required>
+        </div>
+
+       
+        <div class="interests-title">
+            <b>Interests</b>
+        </div>
+
+        <div class="interests">
+
+            <label>
+                <input type="checkbox">
+                Sports
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Music
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Books
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Computer Stuff
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Fashion
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Movies
+            </label>
+
+        </div>
+
+        
+        <div class="submit-area">
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

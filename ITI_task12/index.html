@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+</head>
+
+<body>
+
+    <!-- 1. HTML5 Structural Elements -->
+
+    <header>
+        <h1>Ali Aref</h1>
+        <h2>Web Developer</h2>
+        <p>Welcome to my CV</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h2>Home</h2>
+            <p>
+                Welcome to my personal CV page.
+            </p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                My name is Ali Aref. I am a web developer
+                interested in HTML, CSS and JavaScript.
+            </p>
+
+            <h3>Education</h3>
+
+            <article>
+                <h4>Technical Health Institute</h4>
+                <p>Graduated from Technical Health Institute.</p>
+            </article>
+
+        </section>
+
+        <section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <meter min="0" max="100" value="70"></meter>
+            <span>English</span>
+        </div>
+
+        <div class="skill">
+            <meter min="0" max="100" value="90"></meter>
+            <span>Arabic</span>
+        </div>
+
+        <div class="skill">
+            <meter min="0" max="100" value="10"></meter>
+            <span>Spanish</span>
+        </div>
+
+    </div>
+
+</section>
+
+        <section id="experience">
+
+            <h2>Experience</h2>
+
+            <article>
+                <h3>Frontend Developer</h3>
+                <p>
+                    I have experience in creating websites
+                    using HTML, CSS and JavaScript.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- 3. Time Tag -->
+
+        <section id="birthdate">
+
+            <h2>My Birthdate</h2>
+
+            <p>
+                My birthdate is:
+                <time datetime="2005-10-28">
+                    October 28, 2005
+                </time>
+            </p>
+
+        </section>
+
+        
+
+        <section id="html5-inputs">
+
+            <h2>HTML5 Input Types</h2>
+
+            <!-- Datalist -->
+
+            <h3>Choose Your Country</h3>
+
+            <label for="country">Country:</label>
+
+            <input list="countries" id="country" name="country">
+
+            <datalist id="countries">
+                <option value="Egypt">
+                <option value="Saudi Arabia">
+                <option value="United States">
+                <option value="Germany">
+                <option value="France">
+            </datalist>
+
+            <br><br>
+
+            <!-- Email -->
+
+            <label for="email">Email:</label>
+
+            <input type="email" id="email">
+
+            <br><br>
+
+            <!-- Date -->
+
+            <label for="date">Date:</label>
+
+            <input type="date" id="date">
+
+            <br><br>
+
+            <!-- Number -->
+
+            <label for="age">Age:</label>
+
+            <input type="number" id="age" min="18" max="60">
+
+            <br><br>
+
+            <!-- Range -->
+
+            <label for="range">Skill Level:</label>
+
+            <input type="range" id="range" min="0" max="100">
+
+            <br><br>
+
+            <!-- Color -->
+
+            <label for="color">Favorite Color:</label>
+
+            <input type="color" id="color">
+
+            <br><br>
+
+            <!-- Image -->
+
+            <label for="photo">Choose Your Photo:</label>
+
+            <input type="file" id="photo" accept="image/*">
+
+            <br><br>
+
+            <!-- File -->
+
+            <label for="cv">Upload CV:</label>
+
+            <input type="file" id="cv">
+
+            <br><br>
+
+            <!-- Search -->
+
+            <label for="search">Search:</label>
+
+            <input type="search" id="search">
+
+        </section>
+
+        <!-- Details -->
+
+        <section>
+
+            <h2>More About Me</h2>
+
+            <details>
+
+                <summary>Click here to know more about me</summary>
+
+                <p>
+                    I love learning new technologies and
+                    building websites. I enjoy solving problems
+                    and working on web development projects.
+                </p>
+
+            </details>
+
+        </section>
+
+    </main>
+
+    <!-- Article -->
+
+    <article>
+
+        <h2>Personal Information</h2>
+
+        <p>Name: Ali Aref</p>
+        <p>Email: ali@example.com</p>
+        <p>Phone: +20 100 123 4567</p>
+
+    </article>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Ali Aref. All rights reserved.
+        </p>
+
+    </footer>
+    <style>
+    .skills-container {
+    display: flex;
+    gap: 20px;
+}
+
+.skill {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.skill meter {
+    width: 70px;
+    height: 70px;
+    appearance: none;
+    border: 8px solid #ddd;
+    border-radius: 50%;
+}
+
+.skill span {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Interactive Face</title>
+
+    <style>
+
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        svg {
+            width: 500px;
+            height: 667px;
+            border: 2px solid black;
+            background-color: white;
+        }
+
+        .clickable {
+            fill: transparent;
+            cursor: pointer;
+        }
+
+        .clickable:hover {
+            fill: rgba(0, 150, 255, 0.3);
+        }
+
+        #result {
+            margin: 20px auto;
+            padding: 15px;
+            width: 300px;
+            background-color: white;
+            border: 2px solid black;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1> Human Face</h1>
+
+    <p>Click on any part of the face</p>
+
+
+    <svg width="500" height="667">
+
+        <!-- Face Image -->
+        <image
+            href="face.svg"
+            x="0"
+            y="0"
+            width="500"
+            height="667">
+        </image>
+
+
+        <!-- Left Eye -->
+        <ellipse
+            class="clickable"
+            cx="180"
+            cy="293"
+            rx="21"
+            ry="16"
+            onclick="showPart('Left Eye')">
+        </ellipse>
+
+
+        <!-- Right Eye -->
+        <ellipse
+            class="clickable"
+            cx="253"
+            cy="293"
+            rx="21"
+            ry="16"
+            onclick="showPart('Right Eye')">
+        </ellipse>
+
+
+        <!-- Nose -->
+        <rect
+            class="clickable"
+            x="198"
+            y="299"
+            width="55"
+            height="57"
+            onclick="showPart('Nose')">
+        </rect>
+
+
+        <!-- Mouth -->
+        <ellipse
+            class="clickable"
+            cx="217"
+            cy="378"
+            rx="39"
+            ry="16"
+            onclick="showPart('Mouth')">
+        </ellipse>
+
+
+        <!-- Left Ear -->
+        <rect
+            class="clickable"
+            x="117"
+            y="273"
+            width="36"
+            height="78"
+            onclick="showPart('Left Ear')">
+        </rect>
+
+
+        <!-- Right Ear -->
+        <rect
+            class="clickable"
+            x="281"
+            y="273"
+            width="36"
+            height="78"
+            onclick="showPart('Right Ear')">
+        </rect>
+
+    </svg>
+
+
+    <div id="result">
+        Click on a part
+    </div>
+
+
+    <script>
+
+        function showPart(partName) {
+
+            document.getElementById("result").innerHTML =
+                "You clicked on: " + partName;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+

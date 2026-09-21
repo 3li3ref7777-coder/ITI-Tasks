@@ -1,0 +1,19 @@
+{
+  "student": [
+    {
+      "id": 3,
+      "name": "Sayed Ali",
+      "city": "Alexandria"
+    },
+    {
+      "id": 4,
+      "name": "Youssef Ibrahim",
+      "city": "Hurghada"
+    },
+    {
+      "name": "ali",
+      "city": "cairo",
+      "id": 5
+    }
+  ]
+}
